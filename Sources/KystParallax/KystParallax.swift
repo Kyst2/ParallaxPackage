@@ -58,7 +58,8 @@ public class MotionManager: ObservableObject {
 
 @available(macOS 10.15, *)
 public struct ParallaxLayer: View {
-    var image:Image
+    var image: Image
+    var speed: CGFloat
     
     @State private var xOffset: CGFloat = 0
     @State private var yOffset: CGFloat = 0
@@ -75,16 +76,17 @@ public struct ParallaxLayer: View {
                     let windowLocation = NSApp.windows[0].frame.origin
                     let mouseInView = CGPoint(x: mouseLocation.x - windowLocation.x, y: mouseLocation.y - windowLocation.y)
                     
-                    xOffset = ((NSScreen.main!.frame.width / 2) - mouseInView.x) / 50
-                    yOffset = (mouseInView.y - (NSScreen.main!.frame.height / 2)) / 50
+                    xOffset = (((NSScreen.main!.frame.width / 2) - mouseInView.x) / 50 ) * speed
+                    yOffset = ((mouseInView.y - (NSScreen.main!.frame.height / 2)) / 50 ) * speed
                     
                     return event
                 }
             }
     }
     
-    public init(image: Image) {
+    public init(image: Image, speed: CGFloat = 1) {
         self.image = image
+        self.speed = speed
     }
 }
 
