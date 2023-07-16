@@ -66,14 +66,15 @@ public struct ParallaxLayer: View {
     
     public var body: some View {
         image
-//            .resizable()
-//            .aspectRatio(contentMode: .fill)
-            .frame(width: NSScreen.main!.frame.width, height: NSScreen.main!.frame.height)
             .offset(x: xOffset, y: yOffset)
             .onAppear {
                 NSEvent.addLocalMonitorForEvents(matching: .mouseMoved) { event in
                     let mouseLocation = event.locationInWindow
+                    
+                    guard mouseLocation.x > 0 && mouseLocation.y < 0 else { return event }
+                    
                     let windowLocation = NSApp.windows[0].frame.origin
+                    
                     let mouseInView = CGPoint(x: mouseLocation.x - windowLocation.x, y: mouseLocation.y - windowLocation.y)
                     
                     xOffset = (((NSScreen.main!.frame.width / 2) - mouseInView.x) / 50 ) * speed
