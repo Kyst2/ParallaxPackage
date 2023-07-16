@@ -10,12 +10,12 @@ public struct ParallaxLayer:View {
     var image:Image
     var magnitude:Int
     
-    var body: some View {
+    public var body: some View {
         image
             .modifier(ParallaxMotionModifier(manager: manager, magnitude: magnitude ))
     }
     
-    init(image: Image, magnitude: Int) {
+    public init(image: Image, magnitude: Int) {
         self.image = image
         self.magnitude = magnitude
     }
@@ -31,13 +31,13 @@ struct ParallaxMotionModifier: ViewModifier {
     }
 }
 
-class MotionManager: ObservableObject {
+public class MotionManager: ObservableObject {
     @Published var pitch: Double = 0.0
     @Published var roll: Double = 0.0
     
     private var manager: CMMotionManager
     
-    init() {
+    public init() {
         self.manager = CMMotionManager()
         self.manager.deviceMotionUpdateInterval = 1/60
         self.manager.startDeviceMotionUpdates(to: .main) { (motionData, error) in
@@ -57,7 +57,7 @@ class MotionManager: ObservableObject {
 #elseif os(macOS)
 
 @available(macOS 10.15, *)
-public struct ParallaxLayer:View {
+public struct ParallaxLayer: View {
     var image:Image
     
     @State private var xOffset: CGFloat = 0
@@ -83,7 +83,7 @@ public struct ParallaxLayer:View {
             }
     }
     
-    init(image: Image) {
+    public init(image: Image) {
         self.image = image
     }
 }
