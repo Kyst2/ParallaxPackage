@@ -68,7 +68,7 @@ public struct ParallaxLayer: View {
         image
 //            .resizable()
 //            .aspectRatio(contentMode: .fill)
-//            .frame(width: NSScreen.main!.frame.width, height: NSScreen.main!.frame.height)
+            .frame(width: NSScreen.main!.frame.width, height: NSScreen.main!.frame.height)
             .offset(x: xOffset, y: yOffset)
             .onAppear {
                 NSEvent.addLocalMonitorForEvents(matching: .mouseMoved) { event in
