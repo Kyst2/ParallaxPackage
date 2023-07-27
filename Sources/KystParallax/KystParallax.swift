@@ -71,7 +71,7 @@ public struct ParallaxLayer: View {
                 NSEvent.addLocalMonitorForEvents(matching: .mouseMoved) { event in
                     let mouseLocation = event.locationInWindow
                     
-                    guard mouseLocation.x > 0 && mouseLocation.y < 0 else { return event }
+                    guard mouseLocation.x > 0 && mouseLocation.y > 0 else { return event }
                     
                     let windowLocation = NSApp.windows[0].frame.origin
                     
