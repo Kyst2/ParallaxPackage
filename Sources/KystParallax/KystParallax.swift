@@ -16,7 +16,7 @@ public struct ParallaxLayer:View {
             .modifier(ParallaxMotionModifier(manager: manager, magnitude: magnitude ))
     }
     
-    public init(image: Image, magnitude: Int) {
+    public init(image: Image, magnitude: Double) {
         self.image = image
         self.magnitude = magnitude
     }
