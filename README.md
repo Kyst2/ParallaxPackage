@@ -6,16 +6,11 @@ Project-sample of use:https://github.com/Kyst2/ParallaxView
 
 How it looks on MacOS:
 ==
-
-[![enter image description here][1]][1]
-
-
-  [1]: https://i.stack.imgur.com/c1xhm.gif
+[![Parallax macOS example][1]][1]
 
 How it looks on iOS:
 ==
-
---//--
+[![Parallax iOS example][2]][2]
 
 
 How to use MacOS:
@@ -39,4 +34,7 @@ ZStack {
 ```
 
 
+
+[1]: https://i.stack.imgur.com/c1xhm.gif
+[2]: https://i.stack.imgur.com/CAUhR.gif
 
