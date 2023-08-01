@@ -4,6 +4,7 @@ import SwiftUI
 import CoreMotion
 
 #if os(iOS)
+@available(iOS 13.0, *)
 public struct ParallaxLayer:View {
     @ObservedObject var manager = MotionManager()
     
@@ -21,6 +22,8 @@ public struct ParallaxLayer:View {
     }
 }
 
+
+@available(iOS 13.0, *)
 struct ParallaxMotionModifier: ViewModifier {
     @ObservedObject var manager: MotionManager
     var magnitude: Double
