@@ -34,6 +34,8 @@ struct ParallaxMotionModifier: ViewModifier {
     }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 public class MotionManager: ObservableObject {
     @Published var pitch: Double = 0.0
     @Published var roll: Double = 0.0
