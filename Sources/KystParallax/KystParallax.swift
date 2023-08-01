@@ -9,7 +9,7 @@ public struct ParallaxLayer:View {
     @ObservedObject var manager = MotionManager()
     
     var image:Image
-    var magnitude:Int
+    var magnitude:Double
     
     public var body: some View {
         image
