@@ -74,6 +74,8 @@ public struct ParallaxLayer: View {
     
     public var body: some View {
         image
+            .resizable()
+            .scaledToFit()
             .offset(x: absXOffset  , y: absYOffset )
             .animation(.easeInOut(duration: 0.1), value: absYOffset) //Y changed after X and we can play smooth animation
             .onAppear { subscribeParallaxAnim() }
