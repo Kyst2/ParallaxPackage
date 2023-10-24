@@ -75,7 +75,7 @@ public struct ParallaxLayer: View {
     public var body: some View {
         image
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode: .fill)
 //            .scaledToFit()
             .frame(maxWidth: .infinity,maxHeight: .infinity)
             .offset(x: absXOffset  , y: absYOffset )
